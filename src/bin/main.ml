@@ -118,11 +118,9 @@ let ta p =
   in
   let aux (l, e) =
     let result = snd (get_entry_result l) in
-    let open Ast in
-    let rec aux_rec =
-      let open Expr in
-      function
-      | Ecallf _ | Ecallfptr _ | Ecst _ | Einput | Emalloc | Enull -> ()
+    let rec aux_rec = function
+      | Ast.Expr.Ecallf _ | Ecallfptr _ | Ecst _ | Einput | Emalloc | Enull ->
+          ()
       | Ebinop (_, e1, e2) ->
           aux_rec e1;
           aux_rec e2
@@ -152,7 +150,8 @@ let run cfg _ livevars vbusy reaching available sign taint filename =
 
 let command =
   let doc = "run monotone static analyses" in
-  ( Term.(
+  let term =
+    Term.(
       const run
       $ Arg.(
           value & flag
@@ -179,7 +178,8 @@ let command =
       $ Arg.(
           required
           & pos ~rev:true 0 (some non_dir_file) None
-          & info [] ~docv:"FILE")),
-    Term.info "mframework" ~doc ~exits:Term.default_exits )
+          & info [] ~docv:"FILE"))
+  in
+  Cmd.v (Cmd.info "mframework" ~doc) term
 
-let () = Term.(exit @@ eval command)
+let () = Stdlib.exit (Cmd.eval command)

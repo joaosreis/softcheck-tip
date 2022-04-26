@@ -1,0 +1,4 @@
+pin-depends: [
+    ["softcheck.dev" "git+https://github.com/joaosreis/softcheck.git"]
+    ["softcheck-analysis.dev" "git+https://github.com/joaosreis/softcheck-analysis.git"]
+]

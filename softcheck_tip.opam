@@ -10,9 +10,11 @@ depends: [
   "dune" {>= "2.8" & build}
   "softcheck"
   "softcheck-analysis"
+  "core" {>= "v0.15.0"}
+  "core_unix" {>= "v0.15.0"}
   "menhir"
   "fmt"
-  "cmdliner"
+  "cmdliner" {>= "1.1.1"}
   "odoc" {with-doc}
 ]
 build: [
@@ -30,3 +32,7 @@ build: [
   ]
 ]
 dev-repo: "git+https://github.com/releaselab/softcheck-tip.git"
+pin-depends: [
+    ["softcheck.dev" "git+https://github.com/joaosreis/softcheck.git"]
+    ["softcheck-analysis.dev" "git+https://github.com/joaosreis/softcheck-analysis.git"]
+]

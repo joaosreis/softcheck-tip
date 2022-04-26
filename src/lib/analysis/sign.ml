@@ -1,4 +1,4 @@
-open Base
+open! Core
 
 include
   Softcheck_analysis.Sign_analysis.Make (Ast.Expr) (Scil_tip.Cfg_node)

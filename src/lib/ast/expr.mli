@@ -1,4 +1,4 @@
-open Base
+open! Core
 
 type constant = int
 
@@ -14,9 +14,7 @@ type t =
   | Enull
 
 include Comparable.S with type t := t
-
 include Sexpable.S with type t := t
 
 val pp : Formatter.t -> t -> unit
-
 val to_string : t -> string
