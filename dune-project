@@ -5,17 +5,17 @@
 (generate_opam_files true)
 
 (source
- (uri "git+https://github.com/releaselab/softcheck-tip.git"))
+ (uri "git+https://github.com/joaosreis/softcheck-tip.git"))
 
-(bug_reports "https://github.com/releaselab/softcheck-tip/issues")
+(bug_reports "https://github.com/joaosreis/softcheck-tip/issues")
 
-(homepage "https://github.com/releaselab/softcheck-tip")
+(homepage "https://github.com/joaosreis/softcheck-tip")
 
 (license MIT)
 
-(authors "Jo\195\163o Santos Reis <joao.reis@ubi.pt>")
+(authors "Jo\195\163o Santos Reis <joaosreis@outlook.pt>")
 
-(maintainers "Jo\195\163o Santos Reis <joao.reis@ubi.pt>")
+(maintainers "Jo\195\163o Santos Reis <joaosreis@outlook.pt>")
 
 (package
  (name softcheck_tip)
